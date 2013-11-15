@@ -10,5 +10,6 @@ namespace NumeronAI
 	{
 		List<int> GetNumber();
 		List<int> Answer();
+		void SetResult(List<int> answer, JudgeResult result);
 	}
 }

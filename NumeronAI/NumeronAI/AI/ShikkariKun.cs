@@ -5,6 +5,8 @@ namespace NumeronAI
 {
 	/// <summary>
 	/// しっかり君AI
+	/// １から順に数える
+	/// 平均：約350回
 	/// </summary>
 	class ShikkariKun : INumeronAI
 	{
@@ -16,7 +18,7 @@ namespace NumeronAI
 		/// <summary>
 		/// ランダムの重複なしの3ケタを返す
 		/// </summary>
-		public List<int> GetNumber()
+		List<int> INumeronAI.GetNumber()
 		{
 			List<int> number = null;
 
@@ -41,7 +43,7 @@ namespace NumeronAI
 		/// <summary>
 		/// 1から順番に数えてく
 		/// </summary>
-		public List<int> Answer()
+		List<int> INumeronAI.Answer()
 		{
 			List<int> result = new List<int>();
 
@@ -66,6 +68,10 @@ namespace NumeronAI
 					return answer;
 				}
 			}
+		}
+
+		void INumeronAI.SetResult(List<int> number, JudgeResult result)
+		{
 		}
 	}
 }

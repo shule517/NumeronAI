@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NumeronAI.AI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace NumeronAI
 			int sum = 0;
 			for (int i = 0; i < 10000; i++)
 			{
-				INumeronAI ai = new ShikkariKun();
+				INumeronAI ai = new AhoKun();
 				List<int> number = ai.GetNumber();
 				int answerCount = 0;
 				while (true)
@@ -27,6 +28,8 @@ namespace NumeronAI
 					answerCount++;
 					List<int> answer = ai.Answer();
 					JudgeResult result = master.Judge(number, answer);
+
+					ai.SetResult(answer, result);
 					//Console.WriteLine(string.Format("AIちゃんの答え({0}回目)：{1} => {2}EAT {3}BITE", answerCount, ConverterNumber(answer), result.Eat, result.Bite));
 
 					if (result.Eat == GameMaster.NumeronDigit)
