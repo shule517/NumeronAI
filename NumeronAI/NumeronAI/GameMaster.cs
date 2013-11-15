@@ -20,13 +20,35 @@ namespace NumeronAI
 				return new JudgeResult { Eat = -1, Bite = -1 };
 			}
 
+			JudgeResult result = new JudgeResult { Eat = 0, Bite = 0 };
+
 			// EATの判定
+			for (int i = 0; i < number1.Count; i++)
+			{
+				// 桁と数一致
+				if (number1[i] == number2[i])
+				{
+					result.Eat++;
+				}
+				else
+				{
+					// 数だけ一致
+					if (number1[i] == number2[0])
+					{
+						result.Bite++;
+					}
+					else if (number1[i] == number2[1])
+					{
+						result.Bite++;
+					}
+					else if (number1[i] == number2[2])
+					{
+						result.Bite++;
+					}
+				}
+			}
 
-
-			// BITEの判定
-
-
-			return new JudgeResult { Bite = 0, Eat = 0 };
+			return result;
 		}
 
 		/// <summary>

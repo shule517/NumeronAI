@@ -14,9 +14,13 @@ namespace UnitTestNumeron
 
 			List<int> number = new List<int>() { 1, 2, 3 };
 
-			// 例外
+			// 例外：重複あり
 			test(new List<int>() { 0, 0, 0 }, new List<int>() { 1, 2, 3 }, new JudgeResult { Eat = -1, Bite = -1 });
 			test(new List<int>() { 1, 2, 3 }, new List<int>() { 0, 0, 0 }, new JudgeResult { Eat = -1, Bite = -1 });
+
+			// 例外：桁数違い
+			test(new List<int>() { 0, 0 }, new List<int>() { 1, 2, 3 }, new JudgeResult { Eat = -1, Bite = -1 });
+			test(new List<int>() { 1, 2, 3 }, new List<int>() { 0, 0 }, new JudgeResult { Eat = -1, Bite = -1 });
 
 			// 正常
 			test(new List<int>() { 1, 2, 3 }, new List<int>() { 1, 2, 3 }, new JudgeResult { Eat = 3, Bite = 0 });
