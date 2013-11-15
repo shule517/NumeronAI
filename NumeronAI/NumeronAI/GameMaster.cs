@@ -7,7 +7,7 @@ namespace NumeronAI
 		/// <summary>
 		/// 桁数
 		/// </summary>
-		private const int NumeronDigit = 3;
+		public const int NumeronDigit = 3;
 
 		/// <summary>
 		/// 判定
@@ -54,7 +54,7 @@ namespace NumeronAI
 		/// <summary>
 		/// 数値チェック
 		/// </summary>
-		private bool CheckNumber(List<int> number)
+		public bool CheckNumber(List<int> number)
 		{
 			// 桁数チェック
 			if (!CheckDigit(number))
