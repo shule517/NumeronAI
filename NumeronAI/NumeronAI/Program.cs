@@ -20,7 +20,7 @@ namespace NumeronAI
 			int sum = 0;
 			for (int i = 0; i < 10000; i++)
 			{
-				INumeronAI ai = new AhoKun();
+				INumeronAI ai = new Kakushigo1go();
 				List<int> number = ai.GetNumber();
 				int answerCount = 0;
 				while (true)

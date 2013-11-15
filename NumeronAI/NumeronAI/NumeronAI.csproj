@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\AhoKun.cs" />
+    <Compile Include="AI\Kakushigo1go.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
