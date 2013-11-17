@@ -20,7 +20,7 @@ namespace NumeronAI
 			int sum = 0;
 			for (int i = 0; i < 10000; i++)
 			{
-				INumeronAI ai = new SorenariKun();
+				INumeronAI ai = new SorenariKazukiKun();
 				List<int> number = ai.GetNumber();
 				Console.WriteLine(string.Format("想像した値：{0}", ConverterNumber(number)));
 				int answerCount = 0;
