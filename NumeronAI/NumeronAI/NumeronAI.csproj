@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\AhoKun.cs" />
+    <Compile Include="AI\GakkariShuleKun.cs" />
+    <Compile Include="AI\Input.cs" />
     <Compile Include="AI\Kakushigo1go.cs" />
     <Compile Include="AI\MinmindahaKun.cs" />
     <Compile Include="AI\SorenariKazukiKun.cs" />
