@@ -17,11 +17,12 @@ namespace NumeronAI
 		{
 			GameMaster master = new GameMaster();
 
+			int testCount = 100;
 			int sum = 0;
 			int max = 0;
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < testCount; i++)
 			{
-				INumeronAI ai = new SorenariKazukiKun();
+				INumeronAI ai = new MinmindahaKun();
 				List<int> number = ai.GetNumber();
 				Console.WriteLine(string.Format("想像した値：{0}", ConverterNumber(number)));
 				int answerCount = 0;
@@ -47,7 +48,7 @@ namespace NumeronAI
 				}
 			}
 
-			Console.WriteLine(string.Format("平均値：{0:F4}回目で正解", (float)(sum / 10000.0)));
+			Console.WriteLine(string.Format("平均値：{0:F4}回目で正解", (float)(sum / (float)testCount)));
 			Console.WriteLine(string.Format("最大値：{0}回目で正解", max));
 
 			/*
