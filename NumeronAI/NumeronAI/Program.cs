@@ -18,7 +18,8 @@ namespace NumeronAI
 			GameMaster master = new GameMaster();
 
 			int sum = 0;
-			for (int i = 0; i < 10000; i++)
+			int max = 0;
+			for (int i = 0; i < 10; i++)
 			{
 				INumeronAI ai = new SorenariKazukiKun();
 				List<int> number = ai.GetNumber();
@@ -31,10 +32,14 @@ namespace NumeronAI
 					JudgeResult result = master.Judge(number, answer);
 
 					ai.SetResult(answer, result);
-					//Console.WriteLine(string.Format("AIちゃんの答え({0}回目)：{1} => {2}EAT {3}BITE", answerCount, ConverterNumber(answer), result.Eat, result.Bite));
+					Console.WriteLine(string.Format("AIちゃんの答え({0}回目)：{1} => {2}EAT {3}BITE", answerCount, ConverterNumber(answer), result.Eat, result.Bite));
 
 					if (result.Eat == GameMaster.NumeronDigit)
 					{
+						if (max < answerCount)
+						{
+							max = answerCount;
+						}
 						Console.WriteLine(string.Format("正解！ {0}回目で正解", answerCount));
 						sum += answerCount;
 						break;
@@ -42,7 +47,8 @@ namespace NumeronAI
 				}
 			}
 
-			Console.WriteLine(string.Format("平均値：{0}回目で正解", sum / 10000));
+			Console.WriteLine(string.Format("平均値：{0:F4}回目で正解", (float)(sum / 10000.0)));
+			Console.WriteLine(string.Format("最大値：{0}回目で正解", max));
 
 			/*
 			// AIは重複なしの3桁の数を思い浮かべる事ができる

@@ -8,8 +8,9 @@ namespace NumeronAI.AI
 {
 	/// <summary>
 	/// それなりかずき君
-	/// 0EATの時に、○桁目に△じゃないことを覚えてる
-	/// 平均値：15回
+	/// ランダム値を使って回答する
+	/// ３文字確定していない場合はその答えを入れ替えても無駄
+	/// 平均値：10回
 	/// </summary>
 	public class SorenariKazukiKun : INumeronAI
 	{
